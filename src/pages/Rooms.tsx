@@ -572,12 +572,7 @@ const Rooms = () => {
                             View Details & Photos ({room.images.length})
                           </button>
                           <button
-                            onClick={() => {
-                              document.getElementById('booking-form')?.scrollIntoView({
-                                behavior: 'smooth',
-                                block: isMobile ? 'start' : 'center'
-                              });
-                            }}
+                            onClick={() => window.location.href = "/booking"}
                             className="btn-primary flex-1 py-2 sm:py-3 text-sm"
                           >
                             Book Now
@@ -917,14 +912,8 @@ const Rooms = () => {
                         View All {selectedRoomDetails.images.length} Photos
                       </button>
                       <button
-                        onClick={() => {
-                          closeRoomDetails();
-                          document.getElementById('booking-form')?.scrollIntoView({
-                            behavior: 'smooth',
-                            block: isMobile ? 'start' : 'center'
-                          });
-                        }}
-                        className="btn-primary flex-1 py-3 text-base font-semibold"
+                        onClick={() => window.location.href = "/booking"}
+                        className="btn-primary flex-1 py-2 sm:py-3 text-sm"
                       >
                         Book Now - ${selectedRoomDetails.price}/night
                       </button>
@@ -967,6 +956,7 @@ const Rooms = () => {
       </section>
 
       {/* Booking Form */}
+      {/* 
       <section id="booking-form" className="section-padding bg-gradient-to-b from-gray-50 to-white pt-8 md:pt-12">
         <div className="container-luxury px-4">
           <div className="text-center mb-12">
@@ -978,7 +968,7 @@ const Rooms = () => {
             </p>
           </div>
 
-          {/* Using BookingTabs Component */}
+          {/* Using BookingTabs Component }
           <BookingTabs
             rooms={rooms}
             showHero={false}
@@ -989,6 +979,7 @@ const Rooms = () => {
           />
         </div>
       </section>
+      */}
 
       <Footer />
     </div>

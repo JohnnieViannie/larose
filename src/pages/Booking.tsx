@@ -1,74 +1,10 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { BookingForm } from "@/components/BookingForm";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BedDouble, ExternalLink } from "lucide-react";
+import BookingWidget from "@/components/BookingWidget";
 import poolView from "@/assets/pool-view.jpg";
-
-// Import logo images
 import bookingLogo from "/img_44.png";
 import tripadvisorLogo from "/img_43.png";
 import airbnbLogo from "/img_42.png";
-
-// Room data with correct prices and names
-const rooms = [
-  {
-    name: "Mutuba",
-    price: 48,
-    description: "Cozy wooden interiors with modern amenities, perfect for couples seeking tranquility.",
-    image: "img_10.png",
-    guests: 2,
-    size: "35 m²"
-  },
-  {
-    name: "Muwafu",
-    price: 48,
-    description: "Elegant room featuring traditional design elements and modern comfort.",
-    image: "img_11.png",
-    guests: 2,
-    size: "38 m²"
-  },
-  {
-    name: "Muvule",
-    price: 68,
-    description: "Luxurious room with premium finishes and stunning forest views.",
-    image: "img_12.png",
-    guests: 2,
-    size: "42 m²"
-  },
-  {
-    name: "Mugavu",
-    price: 68,
-    description: "Spacious premium room with elegant furnishings and private balcony.",
-    image: "img_13.png",
-    guests: 2,
-    size: "45 m²"
-  },
-  {
-    name: "Musambya",
-    price:38,
-    description: "Charming compact room with all essential amenities for a comfortable stay.",
-    image: "img_14.png",
-    guests: 2,
-    size: "28 m²"
-  },
-  {
-    name: "Musisi",
-    price: 38,
-    description: "Cozy room with traditional touches and modern convenience.",
-    image: "img_15.png",
-    guests: 2,
-    size: "30 m²"
-  },
-  {
-    name: "Jambula (Family Room)",
-    price: 98,
-    description: "Spacious family suite with private balcony overlooking the tropical forest canopy.",
-    image: "img_12.png",
-    guests: 4,
-    size: "55 m²"
-  }
-];
 
 const Booking = () => {
   return (
@@ -78,11 +14,7 @@ const Booking = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 min-h-[40vh] flex items-center">
         <div className="absolute inset-0">
-          <img
-            src={poolView}
-            alt="Resort booking"
-            className="w-full h-full object-cover"
-          />
+          <img src={poolView} alt="Resort booking" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-wood-dark/70" />
         </div>
         <div className="container-luxury px-4 md:px-8 relative z-10">
@@ -90,88 +22,32 @@ const Booking = () => {
             <span className="text-label text-secondary">Reservations</span>
             <h1 className="heading-display mt-2 mb-4">Book Your Experience</h1>
             <p className="text-body text-wood-cream/90 max-w-2xl mx-auto">
-              Reserve your room and begin your journey to tranquility.
+              Reserve your room and begin your journey to enjoy tranquility.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Booking Form */}
+      {/* Booking Section */}
       <section className="section-padding bg-background">
         <div className="container-luxury max-w-4xl">
-          {/* Room Price Summary - Optional display */}
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
-            <h3 className="font-semibold text-amber-800 mb-2 flex items-center gap-2">
-              <BedDouble className="w-4 h-4" />
-              Our Room Rates (per night)
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-sm">
-              {rooms.map((room) => (
-                <div key={room.name} className="flex justify-between items-center bg-white p-2 rounded border border-amber-100">
-                  <span className="text-gray-700">{room.name}</span>
-                  <span className="font-bold text-amber-700">${room.price}</span>
-                </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Direct Booking Form */}
-          <div className="bg-card p-8 rounded-lg shadow-card">
-            <h2 className="heading-card text-foreground mb-2">Room Reservation</h2>
-            <p className="text-body text-muted-foreground mb-6">
-              Fill out the form below and our team will confirm your booking within 24 hours.
-            </p>
-            <BookingForm rooms={rooms} />
-          </div>
+          <BookingWidget />
 
           {/* External Booking Platforms */}
           <div className="mt-12">
-            <h3 className="heading-card text-foreground text-center mb-8">Book Through These Platforms</h3>
-
+            <h3 className="heading-card text-foreground text-center mb-8">Also Book Through</h3>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-              {/* Booking.com */}
-              <a
-                href="https://www.booking.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <img
-                  src={bookingLogo}
-                  alt="Booking.com"
-                  className="h-10 md:h-12 w-auto"
-                />
+              <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={bookingLogo} alt="Booking.com" className="h-10 md:h-12 w-auto" />
               </a>
-
-              {/* TripAdvisor */}
-              <a
-                href="https://www.tripadvisor.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <img
-                  src={tripadvisorLogo}
-                  alt="TripAdvisor"
-                  className="h-10 md:h-12 w-auto"
-                />
+              <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={tripadvisorLogo} alt="TripAdvisor" className="h-10 md:h-12 w-auto" />
               </a>
-
-              {/* Airbnb */}
-              <a
-                href="https://www.airbnb.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <img
-                  src={airbnbLogo}
-                  alt="Airbnb"
-                  className="h-10 md:h-12 w-auto"
-                />
+              <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <img src={airbnbLogo} alt="Airbnb" className="h-10 md:h-12 w-auto" />
               </a>
             </div>
-
             <p className="text-xs text-center text-gray-400 mt-6">
               Click on any logo to book through our partner links
             </p>
@@ -205,9 +81,10 @@ const Booking = () => {
               Prefer to speak with someone? Our reservation team is available 7 days a week.
             </p>
           </div>
+
         </div>
       </section>
-      a
+
       <Footer />
     </div>
   );
