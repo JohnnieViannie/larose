@@ -183,8 +183,8 @@ const rooms = [
   {
     id: 6,
     name: "Musizi",
-    description: "Cozy room with traditional touches and modern convenience. Inspired by the Musisi tree, celebrated in local culture for its shade and community gathering spots.",
-    detailedDescription: "The Musisi rooms celebrate community and comfort, much like the tree that provides shade for village gatherings. These cozy rooms feature traditional design elements with modern amenities, creating a warm and inviting atmosphere. The garden-facing windows bring natural light and fresh air, connecting you with nature.",
+    description: "Cozy room with traditional touches and modern convenience. Inspired by the Musizi tree, celebrated in local culture for its shade and community gathering spots.",
+    detailedDescription: "The Musizi rooms celebrate community and comfort, much like the tree that provides shade for village gatherings. These cozy rooms feature traditional design elements with modern amenities, creating a warm and inviting atmosphere. The garden-facing windows bring natural light and fresh air, connecting you with nature.",
     price: 38,
     baseImage: "img_15.png",
     images: [

@@ -329,7 +329,7 @@ export function BookingForm({ rooms = [] }: BookingFormProps) {
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  placeholder="+256 779 424477"
+                  placeholder="+256 200 920779"
                   className={`bg-background ${errors.phone ? 'border-red-500' : ''}`}
                 />
                 {errors.phone && <p className="text-sm text-red-500">{errors.phone}</p>}

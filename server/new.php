@@ -42,12 +42,12 @@ if (!empty($data['email'])) {
         $mail->isSMTP();
         $mail->Host = 'mail.larozanatureresort.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'booking@larozanatureresort.com';
+        $mail->Username = 'booking@larozaresort.com';
         $mail->Password = 'ra2S66EEHaPWJqUG8Bkz';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
-        $mail->setFrom('booking@larozanatureresort.com', 'La Roza Nature Resort');
+        $mail->setFrom('booking@larozaresort.com', 'La Roza Nature Resort');
         $mail->addAddress($email);
         $mail->Subject = "Subscribed to Newsletter";
         $mail->Body = "Thank you for subscribing to La Roza Nature Resort newsletter.";

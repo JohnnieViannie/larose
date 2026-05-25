@@ -72,7 +72,7 @@ if (
         $adminMail->isSMTP();
         $adminMail->Host = 'mail.larozanatureresort.com';
         $adminMail->SMTPAuth = true;
-        $adminMail->Username = 'booking@larozanatureresort.com';
+        $adminMail->Username = 'booking@larozaresort.com';
         $adminMail->Password = 'qwert125';
         $adminMail->SMTPSecure = 'ssl';
         $adminMail->Port = 465;
@@ -85,8 +85,8 @@ if (
         ];
 
         // Admin email recipients
-        $adminMail->setFrom('booking@larozanatureresort.com', 'La Roza Nature Resort Booking');
-        $adminMail->addAddress('booking@larozanatureresort.com', 'Reservations');
+        $adminMail->setFrom('booking@larozaresort.com', 'La Roza Nature Resort Booking');
+        $adminMail->addAddress('booking@larozaresort.com', 'Reservations');
         $adminMail->addReplyTo($email, $full_name);
 
         // Admin email content
@@ -208,7 +208,7 @@ if (
             $customerMail->isSMTP();
             $customerMail->Host = 'mail.larozanatureresort.com';
             $customerMail->SMTPAuth = true;
-            $customerMail->Username = 'booking@larozanatureresort.com';
+            $customerMail->Username = 'booking@larozaresort.com';
             $customerMail->Password = 'qwert125';
             $customerMail->SMTPSecure = 'ssl';
             $customerMail->Port = 465;
@@ -221,9 +221,9 @@ if (
             ];
 
             // Customer email recipients
-            $customerMail->setFrom('booking@larozanatureresort.com', 'La Roza Nature Resort');
+            $customerMail->setFrom('booking@larozaresort.com', 'La Roza Nature Resort');
             $customerMail->addAddress($email, $full_name);
-            $customerMail->addReplyTo('booking@larozanatureresort.com', 'Reservations');
+            $customerMail->addReplyTo('booking@larozaresort.com', 'Reservations');
 
             // Customer email content
             $customerMail->isHTML(true);
@@ -264,7 +264,7 @@ if (
                         Check-out: $checkoutDate<br>
                         Guests: $guests</p>
                         
-                        <p>If you have any questions in the meantime, please don't hesitate to contact us at booking@larozanatureresort.com or call us at +94 XXX XXX XXX.</p>
+                        <p>If you have any questions in the meantime, please don't hesitate to contact us at booking@larozaresort.com or call us at +94 XXX XXX XXX.</p>
                         
                         <p>Warm regards,<br>
                         <strong>La Roza Nature Resort Team</strong></p>

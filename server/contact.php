@@ -39,10 +39,10 @@ if (
 
         // SMTP SETTINGS (UNCHANGED)
         $mail->isSMTP();
-        $mail->Host = 'mail.larozanatureresort.com';
+        $mail->Host = 'mail.beaconchildafrica.org';
         $mail->SMTPAuth = true;
-        $mail->Username = 'booking@larozanatureresort.com';
-        $mail->Password = 'qwert125';
+        $mail->Username = 'info@beaconchildafrica.org';
+        $mail->Password = 'Y7hVvff@';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
         $mail->SMTPOptions = [
@@ -54,8 +54,8 @@ if (
         ];
 
         // Recipients
-        $mail->setFrom('booking@larozanatureresort.com', 'Contact form');
-        $mail->addAddress('booking@larozanatureresort.com', 'Contact form');
+        $mail->setFrom('info@beaconchildafrica.org', 'Contact form');
+        $mail->addAddress('info@beaconchildafrica.org  ', 'Contact form');
         $mail->addReplyTo($email, $full_name);
 
         // Content

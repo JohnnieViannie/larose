@@ -134,7 +134,7 @@ const Contact = () => {
     } catch (error) {
       console.error('Contact form submission error:', error);
 
-      let errorMessage = "We apologize for the inconvenience. Please try again or contact us directly at booking@larozanatureresort.com";
+      let errorMessage = "We apologize for the inconvenience. Please try again or contact us directly at booking@larozaresort.com";
 
       // Provide specific error messages based on error type
       if (error instanceof Error) {
@@ -235,7 +235,7 @@ const Contact = () => {
                     <h3 className="font-medium text-foreground mb-1">Telephone</h3>
                     <p className="text-muted-foreground">
                       <a href="tel:+256779424477" className="hover:text-secondary transition-colors">
-                        +256 779 424477
+                        +256 200 920779 / +256 783 937 542
                       </a>
                       <br />
                       <span className="text-xs text-gray-500">Primary contact number</span>
@@ -250,8 +250,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Email Address</h3>
                     <p className="text-muted-foreground">
-                      <a href="mailto:booking@larozanatureresort.com" className="hover:text-secondary transition-colors">
-                        booking@larozanatureresort.com
+                      <a href="mailto:booking@larozaresort.com" className="hover:text-secondary transition-colors">
+                        booking@larozaresort.com
                       </a>
                       <br />
                       <span className="text-xs text-gray-500">For reservations and inquiries</span>
@@ -330,7 +330,7 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+256 779 424477"
+                    placeholder="+256 200 920779 / +256 783 937 542"
                     className={`bg-background ${errors.phone ? 'border-red-500' : ''}`}
                   />
                   {errors.phone && (

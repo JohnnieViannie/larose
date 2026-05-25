@@ -146,13 +146,13 @@ const About = () => {
               <h2 className="heading-section text-foreground">
                 From Open Green Park to Nature Sanctuary
               </h2>
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-body text-foreground font-medium leading-relaxed">
                 La Roza Nature Resort Ssenyange, Masaka City started as an open green park
                 mainly used by locals to relax out of the town bustle. Progressively, the desire
                 and necessity for natural shade led to fruit and other tree planting around the
                 property, transforming the landscape into the lush sanctuary you see today.
               </p>
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-body text-foreground font-medium leading-relaxed">
                 What began as a simple gathering place for the community has evolved into a
                 destination that honors its roots while offering world-class hospitality.
               </p>
@@ -193,13 +193,13 @@ const About = () => {
               <h2 className="heading-section text-foreground">
                 The Vintage Printery & Buganda Kingdom Legacy
               </h2>
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-body text-foreground font-medium leading-relaxed">
                 Originally, the premises housed one of the oldest post-colonial Printing and
                 Cyclostyling machines owned and preserved by Owek. Frederick Walukejje Mulindwa,
                 who served as the first territorial chief of Buddu County under the sitting King
                 of Buganda Kingdom, His Majesty Ronald Muwenda Mutebi II.
               </p>
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-body text-foreground font-medium leading-relaxed">
                 This was a printing press for books, local newspapers, and extensive literature
                 for the Roman Catholic Church during the times of Archbishop Joseph Nakabaale
                 Kiwanuka. Missionaries and Buganda cultural materials remain archived at the
@@ -245,13 +245,13 @@ const About = () => {
               <h2 className="heading-section text-foreground">
                 The Unfinished Coffee Dream
               </h2>
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-body text-foreground font-medium leading-relaxed">
                 The Printery and Cyclostyling premises were later replaced with a coffee
                 processing factory to promote the local cash crop. The vision was to complete
                 the coffee chain – from the gardens of locals, traceable to the cup and export,
                 clearly identifying the farm source.
               </p>
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-body text-foreground font-medium leading-relaxed">
                 However, the coffee processing plan was hit by the effects of the 2009 global
                 recession and closed shop before it could fully take shape. The infrastructure
                 remained, waiting for its next transformation.
@@ -289,13 +289,13 @@ const About = () => {
               <h2 className="heading-section text-foreground">
                 A Serene Transformation
               </h2>
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-body text-foreground font-medium leading-relaxed">
                 Currently, the beautiful green park and vintage printery structure have been
                 redesigned into a quiet, serene environment sprawling with green nature and
                 wooden collections meticulously assembled. The architecture pays homage to
                 the site's industrial past while embracing organic, sustainable design.
               </p>
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-body text-foreground font-medium leading-relaxed">
                 Every wooden beam tells a story, every corner invites contemplation, and
                 every space celebrates the harmonious blend of history and nature.
               </p>
@@ -369,7 +369,7 @@ const About = () => {
               <h2 className="heading-section text-foreground text-2xl sm:text-3xl md:text-4xl">
                 Fire Camp Nights
               </h2>
-              <p className="text-body text-muted-foreground text-base sm:text-lg leading-relaxed">
+              <p className="text-body text-foreground font-medium text-base sm:text-lg leading-relaxed">
                 As the sun sets over Masaka, gather around our signature fire camp. The crackling flames
                 create the perfect ambiance for storytelling, traditional music, and connecting with
                 fellow travelers under the star-filled African sky.
@@ -377,11 +377,11 @@ const About = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="bg-card p-3 sm:p-4 rounded-lg">
                   <h4 className="font-semibold text-foreground mb-1 sm:mb-2 text-sm sm:text-base">Every Evening</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">7:00 PM - 10:00 PM</p>
+                  <p className="text-xs sm:text-sm text-foreground">7:00 PM - 10:00 PM</p>
                 </div>
                 <div className="bg-card p-3 sm:p-4 rounded-lg">
                   <h4 className="font-semibold text-foreground mb-1 sm:mb-2 text-sm sm:text-base">Includes</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Traditional snacks, drinks</p>
+                  <p className="text-xs sm:text-sm text-foreground">Traditional snacks, drinks</p>
                 </div>
               </div>
               <div className="flex flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4">
@@ -410,7 +410,7 @@ const About = () => {
           <h2 className="heading-section text-foreground mt-2 mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl">
             Just a Kilometer from Masaka Town Center
           </h2>
-          <p className="text-body text-muted-foreground text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+          <p className="text-body text-foreground font-medium text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
             This hidden nature resort, rich in history, is celebrated as one of the best
             makeovers the region has seen – from Printing and Cyclostyling to Coffee processing
             plant to the present-day descent accommodation, exquisite restaurant and bar.

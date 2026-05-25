@@ -4,57 +4,56 @@ import { Footer } from "@/components/Footer";
 import { X, ChevronLeft, ChevronRight, Maximize2, Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const SKIPPED_IMAGE_INDICES = [42, 43, 44]; // booking partner logos
+
+const checkMediaExists = async (url: string): Promise<boolean> => {
+    try {
+        const res = await fetch(url, { method: "HEAD" });
+        return res.ok;
+    } catch {
+        return false;
+    }
+};
+
 const GalleryPage = () => {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
     const [images, setImages] = useState<string[]>([]);
-    const [videoStates, setVideoStates] = useState<{ playing: boolean, muted: boolean }[]>([
-        { playing: false, muted: true },
-        { playing: false, muted: true },
-        { playing: false, muted: true }
-    ]);
+    const [videos, setVideos] = useState<string[]>([]);
+    const [videoStates, setVideoStates] = useState<{ playing: boolean; muted: boolean }[]>([]);
 
     const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-    // Featured videos (replace with your actual video URLs)
-    const featuredVideos = [
-        '/vid_1.mp4',
-        '/vid_2.mp4',
-        '/vid_3.mp4'
-    ];
-
-    // Dynamically gather all gallery images from the public folder
-
     useEffect(() => {
-        const loadImages = async () => {
-            const urls: string[] = [];
+        const loadMedia = async () => {
+            const imageUrls: string[] = [];
+            const videoUrls: string[] = [];
             let consecutiveMisses = 0;
             let index = 1;
-            const maxIndex = 200; // hard limit just in case
-            const maxMisses = 20; // stop after this many missing files in a row
-            const extensions = ["png", "jpeg", "jpg"];
+            const maxIndex = 200;
+            const maxMisses = 20;
+            const imageExtensions = ["png", "jpeg", "jpg"];
 
             while (index <= maxIndex && consecutiveMisses < maxMisses) {
-                // skip unwanted files explicitly
-                if ([42, 43, 44].includes(index)) {
+                if (SKIPPED_IMAGE_INDICES.includes(index)) {
                     index += 1;
-                    consecutiveMisses = 0; // reset so the skip doesn't count as a missing file
+                    consecutiveMisses = 0;
                     continue;
                 }
 
                 let foundForIndex = false;
 
-                for (const ext of extensions) {
+                for (const ext of imageExtensions) {
                     const url = `/img_${index}.${ext}`;
-                    try {
-                        const res = await fetch(url, { method: "HEAD" });
-                        if (res.ok) {
-                            urls.push(url);
-                            foundForIndex = true;
-                            break;
-                        }
-                    } catch (err) {
-                        // network error, ignore and try next ext
+                    if (await checkMediaExists(url)) {
+                        imageUrls.push(url);
+                        foundForIndex = true;
+                        break;
                     }
+                }
+
+                const videoUrl = `/vid_${index}.mp4`;
+                if (await checkMediaExists(videoUrl)) {
+                    videoUrls.push(videoUrl);
                 }
 
                 if (foundForIndex) {
@@ -65,10 +64,12 @@ const GalleryPage = () => {
                 index += 1;
             }
 
-            setImages(urls);
+            setImages(imageUrls);
+            setVideos(videoUrls);
+            setVideoStates(videoUrls.map(() => ({ playing: false, muted: true })));
         };
 
-        loadImages();
+        loadMedia();
     }, []);
 
     // Handle video play/pause
@@ -175,7 +176,7 @@ const GalleryPage = () => {
                                 {images.length}+ photos
                             </span>
                             <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm md:text-base">
-                                3 featured videos
+                                {videos.length} videos
                             </span>
                         </div>
                     </div>
@@ -195,7 +196,7 @@ const GalleryPage = () => {
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-                        {featuredVideos.map((src, index) => (
+                        {videos.map((src, index) => (
                             <div
                                 key={index}
                                 className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-xl bg-black"
@@ -270,14 +271,10 @@ const GalleryPage = () => {
                                 {/* Video Info */}
                                 <div className="p-4 md:p-6">
                                     <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
-                                        {index === 0 && "Resort Tour"}
-                                        {index === 1 && "Pool & Wellness"}
-                                        {index === 2 && "Nature Experience"}
+                                        La Roza Video {index + 1}
                                     </h3>
                                     <p className="text-gray-600 text-sm md:text-base">
-                                        {index === 0 && "A comprehensive tour of our luxury accommodations and facilities"}
-                                        {index === 1 && "Relaxation and leisure at our infinity pool and spa area"}
-                                        {index === 2 && "Immerse yourself in the breathtaking natural surroundings"}
+                                        Experience La Roza Nature Resort
                                     </p>
                                 </div>
                             </div>
@@ -341,7 +338,7 @@ const GalleryPage = () => {
                                     {images.length} High-Quality Images
                                 </p>
                                 <p className="text-gray-600 text-sm mt-1">
-                                    Plus 3 immersive videos showcasing our resort
+                                    Plus {videos.length} immersive videos showcasing our resort
                                 </p>
                             </div>
                             <Button

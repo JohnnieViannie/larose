@@ -82,7 +82,7 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary" />
                 <a href="mailto:info@laRozanature.com" className="text-wood-cream/70 hover:text-secondary">
-                  booking@larozanatureresort.com
+                  booking@larozaresort.com
                 </a>
               </div>
             </div>
@@ -111,7 +111,7 @@ export function Footer() {
           </p>
 
           {/* Made with love by Lane Technologies */}
-          <div className="flex items-center gap-2 text-wood-cream/50 text-sm">
+          {/* <div className="flex items-center gap-2 text-wood-cream/50 text-sm">
             <span>Made with</span>
             <Heart className="w-3 h-3 text-red-400 fill-red-400" />
             <span>by</span>
@@ -123,7 +123,7 @@ export function Footer() {
             >
               Lane Technologies
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

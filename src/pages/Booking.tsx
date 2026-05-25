@@ -6,6 +6,66 @@ import bookingLogo from "/img_44.png";
 import tripadvisorLogo from "/img_43.png";
 import airbnbLogo from "/img_42.png";
 
+// Room data with correct prices and names
+const rooms = [
+  {
+    name: "Mutuba",
+    price: 48,
+    description: "Cozy wooden interiors with modern amenities, perfect for couples seeking tranquility.",
+    image: "img_10.png",
+    guests: 2,
+    size: "35 m²"
+  },
+  {
+    name: "Muwafu",
+    price: 48,
+    description: "Elegant room featuring traditional design elements and modern comfort.",
+    image: "img_11.png",
+    guests: 2,
+    size: "38 m²"
+  },
+  {
+    name: "Muvule",
+    price: 68,
+    description: "Luxurious room with premium finishes and stunning forest views.",
+    image: "img_12.png",
+    guests: 2,
+    size: "42 m²"
+  },
+  {
+    name: "Mugavu",
+    price: 68,
+    description: "Spacious premium room with elegant furnishings and private balcony.",
+    image: "img_13.png",
+    guests: 2,
+    size: "45 m²"
+  },
+  {
+    name: "Musambya",
+    price: 38,
+    description: "Charming compact room with all essential amenities for a comfortable stay.",
+    image: "img_14.png",
+    guests: 2,
+    size: "28 m²"
+  },
+  {
+    name: "Musizi",
+    price: 38,
+    description: "Cozy room with traditional touches and modern convenience.",
+    image: "img_15.png",
+    guests: 2,
+    size: "30 m²"
+  },
+  {
+    name: "Jambula (Family Room)",
+    price: 98,
+    description: "Spacious family suite with private balcony overlooking the tropical forest canopy.",
+    image: "img_12.png",
+    guests: 4,
+    size: "55 m²"
+  }
+];
+
 const Booking = () => {
   return (
     <div className="min-h-screen">
